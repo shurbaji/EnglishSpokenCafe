@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "511474405952",
+    "project_id": "english-spoken-cafe-7e252",
+    "storage_bucket": "english-spoken-cafe-7e252.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511474405952:android:55211028f09a64db4d05a5",
+        "android_client_info": {
+          "package_name": "com.example.english_spoken_cafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511474405952-a5ae2u5sf38ruli62p56jrce6cusg8ut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRFzvJ6JESbV-FEGscHI5AvVjdPZdB8dI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511474405952-a5ae2u5sf38ruli62p56jrce6cusg8ut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
