@@ -50,7 +50,8 @@ class HomePages extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => pages[index]),
+                              builder: (context) => pages[index],
+                            ),
                           );
                         },
                         child: Card(

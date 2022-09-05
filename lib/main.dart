@@ -17,7 +17,7 @@ void main() {
 }
 
 List pages = [
-  OnlineG(
+  const OnlineG(
     channelName: '',
     role: null,
   ),
