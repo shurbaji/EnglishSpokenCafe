@@ -3,7 +3,9 @@ import 'package:english_spoken_cafe/Screens/Topics/Monday/Monday.dart';
 import 'package:flutter/material.dart';
 
 class Topics extends StatefulWidget {
-  Topics({Key? key}) : super(key: key);
+  Topics({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<Topics> createState() => _TopicsState();
@@ -50,7 +52,9 @@ class _TopicsState extends State<Topics> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage(Topices[index]),
+                            image: AssetImage(
+                              Topices[index],
+                            ),
                             fit: BoxFit.cover,
                           ),
                           borderRadius: BorderRadius.circular(20),
@@ -59,15 +63,7 @@ class _TopicsState extends State<Topics> {
                           padding: const EdgeInsets.only(
                             top: 90,
                           ),
-                          child: Text(
-                            TopicesT[index],
-                            textAlign: TextAlign.left,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+
                         ),
                       ),
                     ),

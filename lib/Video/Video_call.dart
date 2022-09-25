@@ -1,6 +1,7 @@
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_uikit/agora_uikit.dart';
 import 'package:agora_uikit/models/agora_rtm_mute_request.dart';
+import 'package:english_spoken_cafe/Screens/Online%20Giris/Online%20Giris.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class VideoCalls extends StatefulWidget {
 }
 
 class _MyAppState extends State<VideoCalls> {
+  late final Function(RtcStats stats)? leaveChannel;
   final AgoraClient client = AgoraClient(
     agoraConnectionData: AgoraConnectionData(
       appId: "e0b90423a6d14dc2b14ed072d6899de7",
@@ -30,7 +32,11 @@ class _MyAppState extends State<VideoCalls> {
     agoraEventHandlers: AgoraRtcEventHandlers(
       leaveChannel: (
         RtcStats stats,
-      ) {},
+      ) {
+        AgoraVideoButtons(
+          client: null!,
+        );
+      },
     ),
     agoraChannelData: AgoraChannelData(),
   );
@@ -50,14 +56,21 @@ class _MyAppState extends State<VideoCalls> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: const Text(
             'Video Call',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
           centerTitle: true,
@@ -80,7 +93,7 @@ class _MyAppState extends State<VideoCalls> {
                       'Disable a video ',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                   ),

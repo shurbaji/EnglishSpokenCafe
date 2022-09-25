@@ -56,7 +56,7 @@ class _GathersState extends State<Gathers> {
                     child: Card(
                       semanticContainer: true,
                       child: Image.asset(
-                        'images/video-chat.jpg',
+                        'images/online.jpg',
                         fit: BoxFit.fill,
                       ),
                     ),

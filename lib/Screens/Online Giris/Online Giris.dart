@@ -11,6 +11,7 @@ import 'package:permission_handler/permission_handler.dart';
 class OnlineG extends StatefulWidget {
   final String? channelName;
   final ClientRole? role;
+
   //final ValueChanged<String> onSubmit;
   const OnlineG({
     Key? key,
@@ -23,17 +24,10 @@ class OnlineG extends StatefulWidget {
 }
 
 class _OnlineGState extends State<OnlineG> {
-  final _channelcontroller = TextEditingController();
-  String _validateError = ' ';
-  ClientRole? _role = ClientRole.Broadcaster;
-  bool _validate = false;
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    _channelcontroller.dispose();
-  }
+  bool _obsurctext = true;
+  bool scruet = true;
+  String? _passwordError;
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -91,26 +85,37 @@ class _OnlineGState extends State<OnlineG> {
             SizedBox(
               width: 350,
               child: TextFormField(
-                controller: _channelcontroller,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
+                controller: _passwordController,
                 decoration: InputDecoration(
-                  errorText: _validate ? 'you don/t write the code' : null,
-                  fillColor: Colors.black,
-                  hintText: 'Write code',
+                  errorText: _passwordError,
+                  hintText: 'Enter your code',
+                  labelText: 'Code',
+                  labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                      width: 2.0,
+                    borderRadius: BorderRadius.circular(
+                      25,
                     ),
                   ),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      scruet ? Icons.remove_red_eye : Icons.security,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        scruet = !scruet;
+                      });
+                    },
+                  ),
                 ),
+                keyboardType: TextInputType.number,
+                obscureText: scruet,
+                maxLength: 15,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton(
@@ -118,17 +123,19 @@ class _OnlineGState extends State<OnlineG> {
                 primary: Colors.grey,
               ),
               onPressed: () {
+                print("codes" + _passwordController.text);
                 setState(() {
-                  _channelcontroller.text.isEmpty
-                      ? _validate = true
-                      : _validate = false;
+                  if (_passwordController.text.length < 10)
+                    _passwordError = "Enter your code";
+                  else
+                    _passwordError = null!;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VideoCalls(),
+                    ),
+                  );
                 });
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => VideoCalls(),
-                  ),
-                );
               },
               child: Text(
                 'Let\s Start',

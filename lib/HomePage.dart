@@ -1,3 +1,4 @@
+import 'package:english_spoken_cafe/Dialog/Dialog.dart';
 import 'package:english_spoken_cafe/classes/Classe.dart';
 import 'package:english_spoken_cafe/main.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class HomePages extends StatelessWidget {
         backgroundColor: Colors.black,
         title: const Padding(
           padding: EdgeInsets.only(
-            left: 70,
+            left: 90,
           ),
           child: Text(
             'English spoken cafe',
@@ -62,7 +63,9 @@ class HomePages extends StatelessWidget {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage(imagesd[index]),
+                                image: AssetImage(
+                                  imagesd[index],
+                                ),
                                 fit: BoxFit.cover,
                               ),
                               borderRadius: BorderRadius.circular(20),
@@ -71,15 +74,7 @@ class HomePages extends StatelessWidget {
                               padding: const EdgeInsets.only(
                                 top: 80,
                               ),
-                              child: Text(
-                                Textted[index],
-                                textAlign: TextAlign.left,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+
                             ),
                           ),
                         ),
@@ -88,6 +83,7 @@ class HomePages extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
+                Dialogway(),
               ],
             ),
           ),

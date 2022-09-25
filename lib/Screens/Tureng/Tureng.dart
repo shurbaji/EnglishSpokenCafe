@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -12,46 +11,64 @@ class Turengs extends StatefulWidget {
 }
 
 class _TurengsState extends State<Turengs> {
-  late WebViewController controller;
-  void initState() {
-    super.initState();
-    if (Platform.isAndroid) WebView.platform = AndroidWebView();
-  }
+  final Completer<WebViewController> _controller =
+      Completer<WebViewController>();
+
+  late WebViewController _webViewController;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.black,
-        title: Text('Tureng'),
+        title: Text(
+          'Tureng',
+        ),
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Expanded(
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: WebView(
-                  javascriptMode: JavascriptMode.unrestricted,
-                  initialUrl: 'https://tureng.com/en/turkish-english',
-                  onWebViewCreated: (controller) {
-                    this.controller = controller;
-                  },
-                ),
+      body: Column(
+        children: [
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: WebView(
+                initialUrl: 'https://tureng.com/tr/turkce-ingilizce',
+                javascriptMode: JavascriptMode.unrestricted,
+                onWebViewCreated: (WebViewController webViewController) {
+                  _webViewController = webViewController;
+                  _controller.complete(webViewController);
+                },
+                onProgress: (int progress) {
+                  print("WebView is loading(progress:$progress%)");
+                  _webViewController.evaluateJavascript(
+                    "document.getElementsByTagName('header')[0].style.display='none'",
+                  );
+                  _webViewController.evaluateJavascript(
+                    "document.getElementsByTagName('footer')[0].style.display='none'",
+                  );
+                },
+                onPageStarted: (String url) {
+                  print('page started loading :$url');
+                  _webViewController.evaluateJavascript(
+                    "document.getElementsByTagName('header')[0].style.display='none'",
+                  );
+                  _webViewController.evaluateJavascript(
+                    "document.getElementsByTagName('footer')[0].style.display='none'",
+                  );
+                },
+                onPageFinished: (String url) {
+                  print('Page finished loading: $url');
+                  _webViewController.evaluateJavascript(
+                    "document.getElementsByTagName('header')[0].style.display='none'",
+                  );
+                  _webViewController.evaluateJavascript(
+                    "document.getElementsByTagName('footer')[0].style.display='none'",
+                  );
+                },
               ),
             ),
-            FloatingActionButton(
-              onPressed: () async {
-                controller.evaluateJavascript(
-                  "document.getElementsByTagName('header')[0].style.display='none'",
-                );
-                controller.evaluateJavascript(
-                  "document.getElementsByTagName('footer')[0].style.display='none'",
-                );
-              },
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "511474405952",
-    "project_id": "english-spoken-cafe-7e252",
-    "storage_bucket": "english-spoken-cafe-7e252.appspot.com"
+    "project_number": "314057810424",
+    "firebase_url": "https://english-spoken-cafe-d1a8f.firebaseio.com",
+    "project_id": "english-spoken-cafe-d1a8f",
+    "storage_bucket": "english-spoken-cafe-d1a8f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:511474405952:android:55211028f09a64db4d05a5",
+        "mobilesdk_app_id": "1:314057810424:android:33b7bf3dd75dd80f62f60d",
         "android_client_info": {
           "package_name": "com.example.english_spoken_cafe"
         }
       },
       "oauth_client": [
         {
-          "client_id": "511474405952-a5ae2u5sf38ruli62p56jrce6cusg8ut.apps.googleusercontent.com",
+          "client_id": "314057810424-8knm50bhjr2q1hhcl6j9mglbcgk8o26s.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDRFzvJ6JESbV-FEGscHI5AvVjdPZdB8dI"
+          "current_key": "AIzaSyAEE7BGDLs_8iVAfQH5zj2T-oVBXSijyc0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "511474405952-a5ae2u5sf38ruli62p56jrce6cusg8ut.apps.googleusercontent.com",
+              "client_id": "314057810424-8knm50bhjr2q1hhcl6j9mglbcgk8o26s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

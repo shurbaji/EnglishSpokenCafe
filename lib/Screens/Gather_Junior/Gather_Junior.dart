@@ -12,7 +12,9 @@ class _Gather_JuniorState extends State<Gather_Junior> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gather'),
+        title: const Text(
+          'Gather Junior',
+        ),
         backgroundColor: Colors.black,
         elevation: 0,
       ),
@@ -37,7 +39,7 @@ class _Gather_JuniorState extends State<Gather_Junior> {
                 height: 20,
               ),
               Text(
-                'Gather ',
+                'Gather Junior',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
@@ -53,7 +55,7 @@ class _Gather_JuniorState extends State<Gather_Junior> {
                     child: Card(
                       semanticContainer: true,
                       child: Image.asset(
-                        'images/video-chat.jpg',
+                        'images/online.jpg',
                         fit: BoxFit.fill,
                       ),
                     ),

@@ -9,48 +9,29 @@ import 'package:english_spoken_cafe/Screens/Topics/Weekend/Weekend.dart';
 import 'package:flutter/material.dart';
 
 List imagesd = [
-  'images/online.png',
-  'images/topic.jpg',
-  'images/Gather.jpg',
-  'images/meeting.jpg',
-  'images/video.jpg',
-  'images/momery.jpg',
-  'images/tureng.png',
-  'images/about-us.png',
+  'images/online.jpg',
+  'images/topics.jpg',
+  'images/gather.jpg',
+  'images/gather junior.jpg',
+  'images/videos.jpg',
+  'images/activities.jpg',
+  'images/tureng.jpg',
+  'images/system.jpg',
 ];
 
-List Textted = [
-  'Online Giriş',
-  'Konular',
-  'Gather',
-  'Gather Junior',
-  'Video',
-  'Etkinlik',
-  'Tureng',
-  'About us',
-];
+
 List Topices = [
   'images/monday.jpg',
-  'images/Tuesday.png',
+  'images/tuesday.jpg',
   'images/wednesday.jpg',
-  'images/Thursday.png',
+  'images/thursday.jpg',
   'images/friday.jpg',
-  'images/weekend.png',
-  'images/Junior.jpg',
-  'images/Junior.jpg',
+  'images/weekend.jpg',
+  'images/junior 1.jpg',
+  'images/junior 2.jpg',
   'images/juniorlink.jpg',
 ];
-List TopicesT = [
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Weekend',
-  'JUNIOR1',
-  'JUNIOR2',
-  'JUNIOR LIK GUN',
-];
+
 
 class topicesd {
   String text;
@@ -60,7 +41,11 @@ class topicesd {
 }
 
 List Topicelist = [
-  Mondays(),
+  Mondays(
+    title: '',
+    image: '',
+    text: '',
+  ),
   Tuesday(),
   Wednesday(),
   Thursday(),
@@ -77,13 +62,12 @@ class Topicesdd {
 }
 
 List videoed = [
-  'videos/common.png',
-  'videos/phrasal.jpg',
-  'videos/phrasal.jpg',
-  'videos/prodect.jpg',
-  'videos/sing.jpg',
-  'videos/steve.jpg',
-  'videos/YouTubechannel.jpg',
+  'videos/common mistakes.jpg',
+  'videos/phrasal videos 1.jpg',
+  'videos/phrasal videos 2.jpg',
+  'videos/ESLPOD.jpg',
+  'videos/SONGS WITH LYRICS.jpg',
+  'videos/OUR CHANNEL.jpg',
 ];
 List linkded = [
   'https://www.youtube.com/playlist?list=PLroY9A3h0zCIY7GmYwqi3xtLwT8Cq5gwA',
